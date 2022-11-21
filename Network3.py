@@ -30,8 +30,8 @@ for i in range(1, n) :
     time.sleep(1)
     print(data_decode)
     # a = Acc[int(i*dtt) , 1]
-    a = float(i)
-    msg = struct.pack("!d", a)
+    a = (float(i),float(1))
+    msg = struct.pack("!d""d", a[0], a[1])
     client.sendto(msg, ip_portclient)
 time_end = time.time()
 print('计算结束,用时',time_end-time_start,'秒','平均每步用时',(time_end-time_start) / n,'秒')
